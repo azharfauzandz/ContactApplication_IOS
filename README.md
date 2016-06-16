@@ -1,4 +1,4 @@
 # ContactApplication_IOS
-This is myfirst iOS Applicationt
+This is myfirst iOS Application
 
 -- to be continued
