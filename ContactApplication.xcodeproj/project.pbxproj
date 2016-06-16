@@ -9,13 +9,20 @@
 /* Begin PBXBuildFile section */
 		D26BA8C91D126232004E716C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D26BA8C81D126232004E716C /* main.m */; };
 		D26BA8CC1D126232004E716C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D26BA8CB1D126232004E716C /* AppDelegate.m */; };
-		D26BA8CF1D126232004E716C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D26BA8CE1D126232004E716C /* ViewController.m */; };
 		D26BA8D21D126232004E716C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D26BA8D01D126232004E716C /* Main.storyboard */; };
 		D26BA8D51D126232004E716C /* ContactApplication.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D26BA8D31D126232004E716C /* ContactApplication.xcdatamodeld */; };
 		D26BA8D71D126232004E716C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D26BA8D61D126232004E716C /* Assets.xcassets */; };
 		D26BA8DA1D126232004E716C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D26BA8D81D126232004E716C /* LaunchScreen.storyboard */; };
 		D26BA8E51D126232004E716C /* ContactApplicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D26BA8E41D126232004E716C /* ContactApplicationTests.m */; };
 		D26BA8F01D126232004E716C /* ContactApplicationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D26BA8EF1D126232004E716C /* ContactApplicationUITests.m */; };
+		D26BA9021D1265BC004E716C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26BA9011D1265BC004E716C /* CoreData.framework */; };
+		D26BA9051D126628004E716C /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D26BA9041D126628004E716C /* TableViewController.m */; };
+		D26BA90B1D12744E004E716C /* AddContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D26BA90A1D12744E004E716C /* AddContactViewController.m */; };
+		D26BA90E1D128000004E716C /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D26BA90D1D128000004E716C /* TableViewCell.m */; };
+		D26BA9111D12887B004E716C /* user256.png in Resources */ = {isa = PBXBuildFile; fileRef = D26BA90F1D12887B004E716C /* user256.png */; };
+		D26BA9121D12887B004E716C /* user64.png in Resources */ = {isa = PBXBuildFile; fileRef = D26BA9101D12887B004E716C /* user64.png */; };
+		D26BA9181D129709004E716C /* TextFieldValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = D26BA9171D129709004E716C /* TextFieldValidator.m */; };
+		D26BA91B1D129827004E716C /* error.png in Resources */ = {isa = PBXBuildFile; fileRef = D26BA91A1D129827004E716C /* error.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +47,6 @@
 		D26BA8C81D126232004E716C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D26BA8CA1D126232004E716C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D26BA8CB1D126232004E716C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D26BA8CD1D126232004E716C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D26BA8CE1D126232004E716C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D26BA8D11D126232004E716C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D26BA8D41D126232004E716C /* ContactApplication.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ContactApplication.xcdatamodel; sourceTree = "<group>"; };
 		D26BA8D61D126232004E716C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +58,18 @@
 		D26BA8EB1D126232004E716C /* ContactApplicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContactApplicationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D26BA8EF1D126232004E716C /* ContactApplicationUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactApplicationUITests.m; sourceTree = "<group>"; };
 		D26BA8F11D126232004E716C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D26BA9011D1265BC004E716C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D26BA9031D126628004E716C /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		D26BA9041D126628004E716C /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		D26BA9091D12744E004E716C /* AddContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddContactViewController.h; sourceTree = "<group>"; };
+		D26BA90A1D12744E004E716C /* AddContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddContactViewController.m; sourceTree = "<group>"; };
+		D26BA90C1D128000004E716C /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		D26BA90D1D128000004E716C /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		D26BA90F1D12887B004E716C /* user256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = user256.png; path = ../../../../Downloads/user256.png; sourceTree = "<group>"; };
+		D26BA9101D12887B004E716C /* user64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = user64.png; path = ../../../../Downloads/user64.png; sourceTree = "<group>"; };
+		D26BA9161D129709004E716C /* TextFieldValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldValidator.h; sourceTree = "<group>"; };
+		D26BA9171D129709004E716C /* TextFieldValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldValidator.m; sourceTree = "<group>"; };
+		D26BA91A1D129827004E716C /* error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = error.png; path = ../../../../Downloads/error.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D26BA9021D1265BC004E716C /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +101,7 @@
 		D26BA8BB1D126232004E716C = {
 			isa = PBXGroup;
 			children = (
+				D26BA9011D1265BC004E716C /* CoreData.framework */,
 				D26BA8C61D126232004E716C /* ContactApplication */,
 				D26BA8E31D126232004E716C /* ContactApplicationTests */,
 				D26BA8EE1D126232004E716C /* ContactApplicationUITests */,
@@ -103,12 +122,13 @@
 		D26BA8C61D126232004E716C /* ContactApplication */ = {
 			isa = PBXGroup;
 			children = (
+				D26BA9151D129676004E716C /* Add Contact */,
+				D26BA9001D126595004E716C /* Table */,
 				D26BA8CA1D126232004E716C /* AppDelegate.h */,
 				D26BA8CB1D126232004E716C /* AppDelegate.m */,
-				D26BA8CD1D126232004E716C /* ViewController.h */,
-				D26BA8CE1D126232004E716C /* ViewController.m */,
 				D26BA8D01D126232004E716C /* Main.storyboard */,
 				D26BA8D61D126232004E716C /* Assets.xcassets */,
+				D26BA9131D128887004E716C /* asset */,
 				D26BA8D81D126232004E716C /* LaunchScreen.storyboard */,
 				D26BA8DB1D126232004E716C /* Info.plist */,
 				D26BA8D31D126232004E716C /* ContactApplication.xcdatamodeld */,
@@ -141,6 +161,54 @@
 				D26BA8F11D126232004E716C /* Info.plist */,
 			);
 			path = ContactApplicationUITests;
+			sourceTree = "<group>";
+		};
+		D26BA9001D126595004E716C /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				D26BA9141D12965E004E716C /* Cell */,
+				D26BA9031D126628004E716C /* TableViewController.h */,
+				D26BA9041D126628004E716C /* TableViewController.m */,
+			);
+			name = Table;
+			sourceTree = "<group>";
+		};
+		D26BA9131D128887004E716C /* asset */ = {
+			isa = PBXGroup;
+			children = (
+				D26BA91A1D129827004E716C /* error.png */,
+				D26BA90F1D12887B004E716C /* user256.png */,
+				D26BA9101D12887B004E716C /* user64.png */,
+			);
+			name = asset;
+			sourceTree = "<group>";
+		};
+		D26BA9141D12965E004E716C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D26BA90C1D128000004E716C /* TableViewCell.h */,
+				D26BA90D1D128000004E716C /* TableViewCell.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		D26BA9151D129676004E716C /* Add Contact */ = {
+			isa = PBXGroup;
+			children = (
+				D26BA9191D129710004E716C /* Text Field */,
+				D26BA9091D12744E004E716C /* AddContactViewController.h */,
+				D26BA90A1D12744E004E716C /* AddContactViewController.m */,
+			);
+			name = "Add Contact";
+			sourceTree = "<group>";
+		};
+		D26BA9191D129710004E716C /* Text Field */ = {
+			isa = PBXGroup;
+			children = (
+				D26BA9161D129709004E716C /* TextFieldValidator.h */,
+				D26BA9171D129709004E716C /* TextFieldValidator.m */,
+			);
+			name = "Text Field";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,8 +314,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D26BA9121D12887B004E716C /* user64.png in Resources */,
 				D26BA8DA1D126232004E716C /* LaunchScreen.storyboard in Resources */,
 				D26BA8D71D126232004E716C /* Assets.xcassets in Resources */,
+				D26BA91B1D129827004E716C /* error.png in Resources */,
+				D26BA9111D12887B004E716C /* user256.png in Resources */,
 				D26BA8D21D126232004E716C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,10 +344,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D26BA8CF1D126232004E716C /* ViewController.m in Sources */,
 				D26BA8CC1D126232004E716C /* AppDelegate.m in Sources */,
+				D26BA90E1D128000004E716C /* TableViewCell.m in Sources */,
+				D26BA9181D129709004E716C /* TextFieldValidator.m in Sources */,
 				D26BA8C91D126232004E716C /* main.m in Sources */,
 				D26BA8D51D126232004E716C /* ContactApplication.xcdatamodeld in Sources */,
+				D26BA90B1D12744E004E716C /* AddContactViewController.m in Sources */,
+				D26BA9051D126628004E716C /* TableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
