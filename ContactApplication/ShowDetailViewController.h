@@ -10,6 +10,8 @@
 
 @interface ShowDetailViewController : UIViewController
 
+@property (strong, nonatomic) NSArray *Details;
+
 
 @property (weak, nonatomic) IBOutlet UILabel *DetailFullName;
 @property (weak, nonatomic) IBOutlet UILabel *DetailEmail;

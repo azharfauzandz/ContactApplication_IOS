@@ -49,7 +49,7 @@
                                     <outlet property="EmailLabel" destination="MPm-61-STF" id="4uw-TD-NVJ"/>
                                     <outlet property="NameLabel" destination="GIh-sq-g2q" id="Xu1-05-id6"/>
                                     <outlet property="PhoneLabel" destination="2f5-jN-1ni" id="JFx-Vg-z0x"/>
-                                    <segue destination="6tB-KD-2Cy" kind="show" identifier="ShowDetail" trigger="accessoryAction" id="QyQ-wr-usj"/>
+                                    <segue destination="6tB-KD-2Cy" kind="show" identifier="ShowDetail" id="0d3-Dv-Chc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -222,7 +222,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k67-KL-W0A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="353" y="687"/>
+            <point key="canvasLocation" x="353" y="604"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ywD-br-bBD">

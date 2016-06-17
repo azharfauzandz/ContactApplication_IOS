@@ -14,6 +14,8 @@
 
 #import "ShowDetailViewController.h"
 
+
+
 @interface TableViewController ()
 
 @property (strong) NSMutableArray *contacts;
@@ -120,7 +122,17 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if([[segue identifier] isEqualToString:@"ShowDetail"]){
-        ShowDetailCo
+        ShowDetailViewController *detailView = [segue destinationViewController];
+        NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
+        
+        NSManagedObjectModel *contact = [self.contacts objectAtIndex:myIndexPath.row];
+        NSString *name = [NSString stringWithFormat:@"%@",[contact valueForKey:@"name"]];
+        NSString *email = [NSString stringWithFormat:@"%@",[contact valueForKey:@"email"]];
+        NSString *phone = [NSString stringWithFormat:@"%@",[contact valueForKey:@"phone"]];
+  //      NSString *address = [NSString stringWithFormat:@"%@",[contact valueForKey:@"address"]];
+        detailView.Details = @[name,email,phone];
+        
+        
     }
 }
 
