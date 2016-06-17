@@ -7,13 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TextFieldValidator.h"
 
 @interface AddContactViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIImageView *Photo;
-@property (weak, nonatomic) IBOutlet UITextField *Fullname;
-@property (weak, nonatomic) IBOutlet UITextField *Email;
-@property (weak, nonatomic) IBOutlet UITextField *PhoneNumber;
+//@property (weak, nonatomic) IBOutlet UIImageView *Photo;
+//@property (weak, nonatomic) IBOutlet UITextField *Fullname;
+//@property (weak, nonatomic) IBOutlet UITextField *Email;
+//@property (weak, nonatomic) IBOutlet UITextField *PhoneNumber;
+
+@property (weak, nonatomic) IBOutlet TextFieldValidator *Fullname;
+@property (weak, nonatomic) IBOutlet TextFieldValidator *Email;
+@property (weak, nonatomic) IBOutlet TextFieldValidator *PhoneNumber;
+
+
+
 @property (strong) NSManagedObjectContext *contact;
 
 - (IBAction)SaveButton:(id)sender;

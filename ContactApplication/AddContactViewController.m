@@ -9,6 +9,13 @@
 #import "AddContactViewController.h"
 #import <CoreData/CoreData.h>
 
+#define REGEX_USER_NAME_LIMIT @"^.{3,10}$"
+#define REGEX_USER_NAME @"[A-Za-z0-9]{3,10}"
+#define REGEX_EMAIL @"[A-Z0-9a-z._%+-]{3,}+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
+#define REGEX_PASSWORD_LIMIT @"^.{6,20}$"
+#define REGEX_PASSWORD @"[A-Za-z0-9]{6,20}"
+#define REGEX_PHONE_DEFAULT @"[0-9]{3}\\-[0-9]{3}\\-[0-9]{4}"
+
 @interface AddContactViewController ()
 
 @end
@@ -29,6 +36,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self setupAlerts];
+}
+
+-(void)setupAlerts{
+    [self.Fullname addRegx:REGEX_USER_NAME_LIMIT withMsg:@"Name limit should be come between 3-10"];
+    [self.Fullname addRegx:REGEX_USER_NAME withMsg:@"Only alpha numeric characters are allowed."];
+    self.Fullname.validateOnResign=NO;
+    
+    [self.Email addRegx:REGEX_EMAIL withMsg:@"Enter valid email."];
+    
+    [self.PhoneNumber addRegx:REGEX_PHONE_DEFAULT withMsg:@"Phone number must be in proper format (eg. ###-###-####)"];
+    self.PhoneNumber.isMandatory=NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,20 +68,24 @@
 
 - (IBAction)SaveButton:(id)sender {
     
-    NSManagedObjectContext *context = [self managedObjectContext];
-    NSManagedObject *newContact = [NSEntityDescription insertNewObjectForEntityForName:@"Contact" inManagedObjectContext:context];
-    
-    [newContact setValue:self.Fullname.text forKey:@"name"];
-    [newContact setValue:self.Email.text forKey:@"email"];
-    [newContact setValue:self.PhoneNumber.text forKey:@"phone"];
- 
-    NSError *error = nil;
-    
-    if(![context save:&error]){
-        NSLog(@"%@ %@", error, [error localizedDescription]);
+    if([self.Fullname validate] & [self.Email validate] & [self.PhoneNumber validate] ){
+        
+        NSManagedObjectContext *context = [self managedObjectContext];
+        NSManagedObject *newContact = [NSEntityDescription insertNewObjectForEntityForName:@"Contact" inManagedObjectContext:context];
+        
+        [newContact setValue:self.Fullname.text forKey:@"name"];
+        [newContact setValue:self.Email.text forKey:@"email"];
+        [newContact setValue:self.PhoneNumber.text forKey:@"phone"];
+        
+        NSError *error = nil;
+        
+        if(![context save:&error]){
+            NSLog(@"%@ %@", error, [error localizedDescription]);
+        }
+        
+        [self.navigationController popViewControllerAnimated:YES];
     }
- 
-    [self.navigationController popViewControllerAnimated:YES];
+    
     
     
     
