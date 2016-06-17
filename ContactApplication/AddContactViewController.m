@@ -8,13 +8,12 @@
 
 #import "AddContactViewController.h"
 #import <CoreData/CoreData.h>
+#import <QuartzCore/QuartzCore.h>
 
-#define REGEX_USER_NAME_LIMIT @"^.{3,10}$"
-#define REGEX_USER_NAME @"[A-Za-z0-9]{3,10}"
+#define REGEX_NAME_LIMIT @"^.{3,16}$"
+#define REGEX_NAME @"[A-Za-z\\s]{3,16}"
 #define REGEX_EMAIL @"[A-Z0-9a-z._%+-]{3,}+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
-#define REGEX_PASSWORD_LIMIT @"^.{6,20}$"
-#define REGEX_PASSWORD @"[A-Za-z0-9]{6,20}"
-#define REGEX_PHONE_DEFAULT @"[0-9]{3}\\-[0-9]{3}\\-[0-9]{4}"
+#define REGEX_PHONE_DEFAULT @"[\\+0-9][0-9]{6,16}"
 
 @interface AddContactViewController ()
 
@@ -38,17 +37,24 @@
     // Do any additional setup after loading the view.
     
     [self setupAlerts];
+    
+    //To make the border look very close to a UITextField
+    [self.Address.layer setBorderColor:[[[UIColor grayColor] colorWithAlphaComponent:0.5] CGColor]];
+    [self.Address.layer setBorderWidth:0.4];
+    //The rounded corner part, where you specify your view's corner radius:
+    self.Address.layer.cornerRadius = 5;
+    self.Address.clipsToBounds = YES;
 }
 
 -(void)setupAlerts{
-    [self.Fullname addRegx:REGEX_USER_NAME_LIMIT withMsg:@"Name limit should be come between 3-10"];
-    [self.Fullname addRegx:REGEX_USER_NAME withMsg:@"Only alpha numeric characters are allowed."];
+    //fullName alert
+    [self.Fullname addRegx:REGEX_NAME_LIMIT withMsg:@"Name limit should be come between 3-10"];
+    [self.Fullname addRegx:REGEX_NAME withMsg:@"Only alphabet A-z dan space"];
     self.Fullname.validateOnResign=NO;
-    
-    [self.Email addRegx:REGEX_EMAIL withMsg:@"Enter valid email."];
-    
-    [self.PhoneNumber addRegx:REGEX_PHONE_DEFAULT withMsg:@"Phone number must be in proper format (eg. ###-###-####)"];
-    self.PhoneNumber.isMandatory=NO;
+    //emailAlert
+    [self.Email addRegx:REGEX_EMAIL withMsg:@"Enter valid email"];
+    //phoneNumberAlert
+    [self.PhoneNumber addRegx:REGEX_PHONE_DEFAULT withMsg:@"Enter valid phone"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,7 +74,7 @@
 
 - (IBAction)SaveButton:(id)sender {
     
-    if([self.Fullname validate] & [self.Email validate] & [self.PhoneNumber validate] ){
+    if([self.Fullname validate] & [self.Email validate] & [self.PhoneNumber validate]){
         
         NSManagedObjectContext *context = [self managedObjectContext];
         NSManagedObject *newContact = [NSEntityDescription insertNewObjectForEntityForName:@"Contact" inManagedObjectContext:context];
@@ -76,9 +82,10 @@
         [newContact setValue:self.Fullname.text forKey:@"name"];
         [newContact setValue:self.Email.text forKey:@"email"];
         [newContact setValue:self.PhoneNumber.text forKey:@"phone"];
+        [newContact setValue:self.Address.text forKey:@"address"];
         
+        //if there is error
         NSError *error = nil;
-        
         if(![context save:&error]){
             NSLog(@"%@ %@", error, [error localizedDescription]);
         }

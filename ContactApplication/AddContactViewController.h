@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet TextFieldValidator *Fullname;
 @property (weak, nonatomic) IBOutlet TextFieldValidator *Email;
 @property (weak, nonatomic) IBOutlet TextFieldValidator *PhoneNumber;
+@property (weak, nonatomic) IBOutlet UITextView *Address;
 
 
 

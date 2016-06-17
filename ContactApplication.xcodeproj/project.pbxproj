@@ -23,6 +23,7 @@
 		D26BA9121D12887B004E716C /* user64.png in Resources */ = {isa = PBXBuildFile; fileRef = D26BA9101D12887B004E716C /* user64.png */; };
 		D26BA9181D129709004E716C /* TextFieldValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = D26BA9171D129709004E716C /* TextFieldValidator.m */; };
 		D26BA91B1D129827004E716C /* error.png in Resources */ = {isa = PBXBuildFile; fileRef = D26BA91A1D129827004E716C /* error.png */; };
+		D2ADB8EC1D14016600E89664 /* ShowDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2ADB8EB1D14016600E89664 /* ShowDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		D26BA9161D129709004E716C /* TextFieldValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldValidator.h; sourceTree = "<group>"; };
 		D26BA9171D129709004E716C /* TextFieldValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldValidator.m; sourceTree = "<group>"; };
 		D26BA91A1D129827004E716C /* error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = error.png; path = ../../../../Downloads/error.png; sourceTree = "<group>"; };
+		D2ADB8EA1D14016600E89664 /* ShowDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowDetailViewController.h; sourceTree = "<group>"; };
+		D2ADB8EB1D14016600E89664 /* ShowDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,15 +126,16 @@
 			isa = PBXGroup;
 			children = (
 				D26BA9151D129676004E716C /* Add Contact */,
+				D2ADB8ED1D1401E200E89664 /* ShowDetail */,
 				D26BA9001D126595004E716C /* Table */,
-				D26BA8CA1D126232004E716C /* AppDelegate.h */,
-				D26BA8CB1D126232004E716C /* AppDelegate.m */,
-				D26BA8D01D126232004E716C /* Main.storyboard */,
+				D2ADB8E91D13DBDB00E89664 /* StoryBoard */,
 				D26BA8D61D126232004E716C /* Assets.xcassets */,
 				D26BA9131D128887004E716C /* asset */,
 				D26BA8D81D126232004E716C /* LaunchScreen.storyboard */,
 				D26BA8DB1D126232004E716C /* Info.plist */,
 				D26BA8D31D126232004E716C /* ContactApplication.xcdatamodeld */,
+				D26BA8CA1D126232004E716C /* AppDelegate.h */,
+				D26BA8CB1D126232004E716C /* AppDelegate.m */,
 				D26BA8C71D126232004E716C /* Supporting Files */,
 			);
 			path = ContactApplication;
@@ -209,6 +213,23 @@
 				D26BA9171D129709004E716C /* TextFieldValidator.m */,
 			);
 			name = "Text Field";
+			sourceTree = "<group>";
+		};
+		D2ADB8E91D13DBDB00E89664 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				D26BA8D01D126232004E716C /* Main.storyboard */,
+			);
+			name = StoryBoard;
+			sourceTree = "<group>";
+		};
+		D2ADB8ED1D1401E200E89664 /* ShowDetail */ = {
+			isa = PBXGroup;
+			children = (
+				D2ADB8EA1D14016600E89664 /* ShowDetailViewController.h */,
+				D2ADB8EB1D14016600E89664 /* ShowDetailViewController.m */,
+			);
+			name = ShowDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2ADB8EC1D14016600E89664 /* ShowDetailViewController.m in Sources */,
 				D26BA8CC1D126232004E716C /* AppDelegate.m in Sources */,
 				D26BA90E1D128000004E716C /* TableViewCell.m in Sources */,
 				D26BA9181D129709004E716C /* TextFieldValidator.m in Sources */,
@@ -576,6 +598,7 @@
 				D26BA8F61D126232004E716C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D26BA8F71D126232004E716C /* Build configuration list for PBXNativeTarget "ContactApplicationTests" */ = {
 			isa = XCConfigurationList;
@@ -584,6 +607,7 @@
 				D26BA8F91D126232004E716C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D26BA8FA1D126232004E716C /* Build configuration list for PBXNativeTarget "ContactApplicationUITests" */ = {
 			isa = XCConfigurationList;
@@ -592,6 +616,7 @@
 				D26BA8FC1D126232004E716C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

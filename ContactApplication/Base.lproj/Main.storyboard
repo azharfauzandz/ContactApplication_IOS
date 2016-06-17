@@ -6,7 +6,7 @@
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Contact-->
         <scene sceneID="NJt-75-9WZ">
             <objects>
                 <tableViewController id="tyL-T6-QAG" customClass="TableViewController" sceneMemberID="viewController">
@@ -49,6 +49,7 @@
                                     <outlet property="EmailLabel" destination="MPm-61-STF" id="4uw-TD-NVJ"/>
                                     <outlet property="NameLabel" destination="GIh-sq-g2q" id="Xu1-05-id6"/>
                                     <outlet property="PhoneLabel" destination="2f5-jN-1ni" id="JFx-Vg-z0x"/>
+                                    <segue destination="6tB-KD-2Cy" kind="show" identifier="ShowDetail" trigger="accessoryAction" id="QyQ-wr-usj"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -57,7 +58,7 @@
                             <outlet property="delegate" destination="tyL-T6-QAG" id="bL0-oa-SeW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="RU8-EC-V0B">
+                    <navigationItem key="navigationItem" title="Contact" id="RU8-EC-V0B">
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="m8G-2Z-Uul">
                                 <connections>
@@ -94,12 +95,32 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your name here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sE4-uu-mqI" customClass="TextFieldValidator">
+                                <rect key="frame" x="20" y="340" width="374" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="DismissKeyboard:" destination="hxA-Ql-mar" eventType="editingDidEndOnExit" id="Nbl-BM-yKn"/>
+                                    <outlet property="delegate" destination="hxA-Ql-mar" id="0ky-dw-Mcr"/>
+                                    <outlet property="presentInView" destination="yuf-II-87W" id="wqI-YI-uBL"/>
+                                </connections>
+                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oX-yb-tep">
                                 <rect key="frame" x="20" y="378" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ImT-hC-6tj" customClass="TextFieldValidator">
+                                <rect key="frame" x="20" y="407" width="374" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="DismissKeyboard:" destination="hxA-Ql-mar" eventType="editingDidEndOnExit" id="Hut-vb-vr3"/>
+                                    <outlet property="delegate" destination="hxA-Ql-mar" id="tyt-IM-0IG"/>
+                                    <outlet property="presentInView" destination="yuf-II-87W" id="aXQ-fs-Zrj"/>
+                                </connections>
+                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6W-ia-CGf">
                                 <rect key="frame" x="20" y="445" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -116,37 +137,31 @@
                                     <outlet property="presentInView" destination="yuf-II-87W" id="7Cc-cn-ODe"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htK-Rh-oe5">
+                                <rect key="frame" x="20" y="512" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="757" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5D-OJ-zJ6">
-                                <rect key="frame" x="190" y="512" width="34" height="30"/>
+                                <rect key="frame" x="190" y="649" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="SaveButton:" destination="hxA-Ql-mar" eventType="touchUpInside" id="uFi-Wj-gan"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ImT-hC-6tj" customClass="TextFieldValidator">
-                                <rect key="frame" x="20" y="407" width="374" height="30"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rwq-LI-kyC" userLabel="Address">
+                                <rect key="frame" x="20" y="541" width="374" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                                <connections>
-                                    <action selector="DismissKeyboard:" destination="hxA-Ql-mar" eventType="editingDidEndOnExit" id="Hut-vb-vr3"/>
-                                    <outlet property="delegate" destination="hxA-Ql-mar" id="tyt-IM-0IG"/>
-                                    <outlet property="presentInView" destination="yuf-II-87W" id="aXQ-fs-Zrj"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your name here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sE4-uu-mqI" customClass="TextFieldValidator">
-                                <rect key="frame" x="20" y="340" width="374" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                                <connections>
-                                    <action selector="DismissKeyboard:" destination="hxA-Ql-mar" eventType="editingDidEndOnExit" id="Nbl-BM-yKn"/>
-                                    <outlet property="delegate" destination="hxA-Ql-mar" id="0ky-dw-Mcr"/>
-                                    <outlet property="presentInView" destination="yuf-II-87W" id="wqI-YI-uBL"/>
-                                </connections>
-                            </textField>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" address="YES"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="Address" destination="rwq-LI-kyC" id="z4f-zM-cwA"/>
                         <outlet property="Email" destination="ImT-hC-6tj" id="Pfk-SB-eM5"/>
                         <outlet property="Fullname" destination="sE4-uu-mqI" id="rja-hw-2tn"/>
                         <outlet property="PhoneNumber" destination="Pek-tu-YAd" id="ehX-XJ-FcB"/>
@@ -155,6 +170,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="al2-vJ-vN2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="854" y="-239"/>
+        </scene>
+        <!--Show Detail View Controller-->
+        <scene sceneID="hfk-P3-HNY">
+            <objects>
+                <viewController id="6tB-KD-2Cy" customClass="ShowDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hQ6-Wi-EhJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="bQ3-4r-ZgR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rp5-EJ-TbX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user256.png" translatesAutoresizingMaskIntoConstraints="NO" id="4zu-cz-HRQ">
+                                <rect key="frame" x="127" y="127" width="160" height="160"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHn-me-mY8" userLabel="DetailFullname">
+                                <rect key="frame" x="20" y="358" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yjg-1S-NdA" userLabel="DetailEmail">
+                                <rect key="frame" x="20" y="387" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eex-Wa-hCd" userLabel="DetailPhoneNumber">
+                                <rect key="frame" x="20" y="416" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9N3-xa-nt1" userLabel="DetailAddress">
+                                <rect key="frame" x="20" y="445" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="DetailAddress" destination="9N3-xa-nt1" id="g8e-iC-nd7"/>
+                        <outlet property="DetailEmail" destination="Yjg-1S-NdA" id="l7F-DC-ssV"/>
+                        <outlet property="DetailFullName" destination="aHn-me-mY8" id="ZfJ-hd-6Iw"/>
+                        <outlet property="DetailPhoneNumber" destination="eex-Wa-hCd" id="cxG-AJ-gG9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k67-KL-W0A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="353" y="687"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ywD-br-bBD">
