@@ -129,8 +129,15 @@
         NSString *name = [NSString stringWithFormat:@"%@",[contact valueForKey:@"name"]];
         NSString *email = [NSString stringWithFormat:@"%@",[contact valueForKey:@"email"]];
         NSString *phone = [NSString stringWithFormat:@"%@",[contact valueForKey:@"phone"]];
-  //      NSString *address = [NSString stringWithFormat:@"%@",[contact valueForKey:@"address"]];
-        detailView.Details = @[name,email,phone];
+        NSString *address = [NSString stringWithFormat:@"%@",[contact valueForKey:@"address"]];
+        detailView.Details = @[name,email,phone, address];
+        
+        //debugging
+        
+        NSLog(name);
+        NSLog(email);
+        NSLog(phone);
+        NSLog(address);
         
         
     }

@@ -82,7 +82,7 @@
         [newContact setValue:self.Fullname.text forKey:@"name"];
         [newContact setValue:self.Email.text forKey:@"email"];
         [newContact setValue:self.PhoneNumber.text forKey:@"phone"];
-    //    [newContact setValue:self.Address.text forKey:@"address"];
+        [newContact setValue:self.Address.text forKey:@"address"];
         
         //if there is error
         NSError *error = nil;
