@@ -17,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *DetailEmail;
 @property (weak, nonatomic) IBOutlet UILabel *DetailPhoneNumber;
 @property (weak, nonatomic) IBOutlet UILabel *DetailAddress;
+@property (weak, nonatomic) IBOutlet UIImageView *DetailImage;
 
 @end
