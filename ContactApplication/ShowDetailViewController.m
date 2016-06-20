@@ -17,6 +17,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+    //get details information
+    self.DetailFullName.text = _Details[0];
+    self.DetailEmail.text = _Details[1];
+    self.DetailPhoneNumber.text = _Details[2];
+    self.DetailAddress.text = _Details[3];
+    
+    
+}
+
+- (void) viewDidLayoutSubviews{
+    
+    //to set to fit text
+    self.DetailAddress.numberOfLines = 0;
+    [self.DetailAddress sizeToFit];
 }
 
 - (void)didReceiveMemoryWarning {
