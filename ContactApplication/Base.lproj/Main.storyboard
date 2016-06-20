@@ -65,7 +65,11 @@
                                     <segue destination="hxA-Ql-mar" kind="show" id="3Q4-Bz-iLa"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Sort" id="gGN-KY-qcr"/>
+                            <barButtonItem title="Sort" id="gGN-KY-qcr">
+                                <connections>
+                                    <action selector="SortButton:" destination="tyL-T6-QAG" id="CeM-WT-YDR"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
@@ -165,6 +169,7 @@
                         <outlet property="Email" destination="ImT-hC-6tj" id="Pfk-SB-eM5"/>
                         <outlet property="Fullname" destination="sE4-uu-mqI" id="rja-hw-2tn"/>
                         <outlet property="PhoneNumber" destination="Pek-tu-YAd" id="ehX-XJ-FcB"/>
+                        <segue destination="QRL-Ii-3UG" kind="show" id="f9r-yi-UHX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="al2-vJ-vN2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -243,6 +248,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k67-KL-W0A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="353" y="604"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="eZR-V1-nmm">
+            <objects>
+                <viewController id="QRL-Ii-3UG" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2sQ-fV-neD"/>
+                        <viewControllerLayoutGuide type="bottom" id="HvN-lI-ivc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Z0o-nd-JOc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q8W-oc-Mr7">
+                                <rect key="frame" x="0.0" y="161" width="414" height="414"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem systemItem="organize" id="zLH-Jh-vmi"/>
+                        <barButtonItem width="314" style="plain" systemItem="fixedSpace" id="uNB-PG-wz2"/>
+                        <barButtonItem systemItem="camera" id="nbH-Vd-iRy"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="llm-ea-o9n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="854" y="604"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ywD-br-bBD">

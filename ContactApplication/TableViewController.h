@@ -10,4 +10,7 @@
 
 @interface TableViewController : UITableViewController
 
+- (IBAction)SortButton:(id)sender;
+
+
 @end
