@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *NameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *EmailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *PhoneLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *PhotoView;
 
 @end

@@ -35,7 +35,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    //setup alert
     [self setupAlerts];
     
     //To make the border look very close to a UITextField
@@ -44,6 +44,8 @@
     //The rounded corner part, where you specify your view's corner radius:
     self.Address.layer.cornerRadius = 5;
     self.Address.clipsToBounds = YES;
+    //set no profile image
+    [self.PhotoProfile setImage:[UIImage imageNamed:@"user.png"]];
 }
 
 -(void)setupAlerts{
@@ -72,6 +74,30 @@
 }
 */
 
+- (IBAction)PickerImage:(id)sender {
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.delegate = self;
+    imagePicker.allowsEditing = NO;
+    [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    
+    [self presentViewController:imagePicker animated:YES completion:nil];
+    
+}
+
+- (IBAction)CameraImage:(id)sender {
+}
+
+
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
+    [self.PhotoProfile setImage:image];
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (IBAction)SaveButton:(id)sender {
     
     if([self.Fullname validate] & [self.Email validate] & [self.PhoneNumber validate]){
@@ -79,10 +105,15 @@
         NSManagedObjectContext *context = [self managedObjectContext];
         NSManagedObject *newContact = [NSEntityDescription insertNewObjectForEntityForName:@"Contact" inManagedObjectContext:context];
         
+        UIImage *img = [self.PhotoProfile image];
+        NSData *imgData = UIImagePNGRepresentation(img);
+        
+        //save to core data
         [newContact setValue:self.Fullname.text forKey:@"name"];
         [newContact setValue:self.Email.text forKey:@"email"];
         [newContact setValue:self.PhoneNumber.text forKey:@"phone"];
         [newContact setValue:self.Address.text forKey:@"address"];
+        [newContact setValue:imgData forKey:@"photo"];
         
         //if there is error
         NSError *error = nil;
@@ -101,4 +132,5 @@
 - (IBAction)DismissKeyboard:(id)sender {
     [self resignFirstResponder];
 }
+
 @end

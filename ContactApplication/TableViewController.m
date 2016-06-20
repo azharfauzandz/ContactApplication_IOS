@@ -77,6 +77,16 @@
     [cell.NameLabel setText:[NSString stringWithFormat:@"%@",[contact valueForKey:@"name"]]];
     [cell.EmailLabel setText:[NSString stringWithFormat:@"%@",[contact valueForKey:@"email"]]];
     [cell.PhoneLabel setText:[NSString stringWithFormat:@"%@",[contact valueForKey:@"phone"]]];
+    
+    if(![contact valueForKey:@"photo"]){
+        [cell.PhotoView setImage:[UIImage imageNamed:@"user.png"]];
+    }else{
+        
+        NSData *imgData = [contact valueForKey:@"photo"];
+        UIImage *image = [UIImage imageWithData:imgData];
+        [cell.PhotoView setImage:image];
+        
+    }
     return cell;
 } 
 
@@ -130,7 +140,15 @@
         NSString *email = [NSString stringWithFormat:@"%@",[contact valueForKey:@"email"]];
         NSString *phone = [NSString stringWithFormat:@"%@",[contact valueForKey:@"phone"]];
         NSString *address = [NSString stringWithFormat:@"%@",[contact valueForKey:@"address"]];
-        detailView.Details = @[name,email,phone, address];
+        NSData *imgData;
+        if(![contact valueForKey:@"photo"]){
+           // NSLog();
+            imgData = UIImagePNGRepresentation([UIImage imageNamed:@"user.png"]);
+        }else{
+            imgData = [contact valueForKey:@"photo"];
+        }
+        ;
+        detailView.Details = @[name,email,phone, address, imgData];
         
         //debugging
         

@@ -11,16 +11,13 @@
 
 @interface AddContactViewController : UIViewController
 
-//@property (weak, nonatomic) IBOutlet UIImageView *Photo;
-//@property (weak, nonatomic) IBOutlet UITextField *Fullname;
-//@property (weak, nonatomic) IBOutlet UITextField *Email;
-//@property (weak, nonatomic) IBOutlet UITextField *PhoneNumber;
-
+@property (weak, nonatomic) IBOutlet UIImageView *PhotoProfile;
 @property (weak, nonatomic) IBOutlet TextFieldValidator *Fullname;
 @property (weak, nonatomic) IBOutlet TextFieldValidator *Email;
 @property (weak, nonatomic) IBOutlet TextFieldValidator *PhoneNumber;
 @property (weak, nonatomic) IBOutlet UITextView *Address;
-
+- (IBAction)PickerImage:(id)sender;
+- (IBAction)CameraImage:(id)sender;
 
 
 @property (strong) NSManagedObjectContext *contact;

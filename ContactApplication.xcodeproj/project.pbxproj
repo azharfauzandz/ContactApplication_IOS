@@ -20,7 +20,7 @@
 		D26BA9051D126628004E716C /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D26BA9041D126628004E716C /* TableViewController.m */; };
 		D26BA90B1D12744E004E716C /* AddContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D26BA90A1D12744E004E716C /* AddContactViewController.m */; };
 		D26BA90E1D128000004E716C /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D26BA90D1D128000004E716C /* TableViewCell.m */; };
-		D26BA9111D12887B004E716C /* user256.png in Resources */ = {isa = PBXBuildFile; fileRef = D26BA90F1D12887B004E716C /* user256.png */; };
+		D26BA9111D12887B004E716C /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = D26BA90F1D12887B004E716C /* user.png */; };
 		D26BA9121D12887B004E716C /* user64.png in Resources */ = {isa = PBXBuildFile; fileRef = D26BA9101D12887B004E716C /* user64.png */; };
 		D26BA9181D129709004E716C /* TextFieldValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = D26BA9171D129709004E716C /* TextFieldValidator.m */; };
 		D26BA91B1D129827004E716C /* error.png in Resources */ = {isa = PBXBuildFile; fileRef = D26BA91A1D129827004E716C /* error.png */; };
@@ -69,7 +69,7 @@
 		D26BA90A1D12744E004E716C /* AddContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddContactViewController.m; sourceTree = "<group>"; };
 		D26BA90C1D128000004E716C /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		D26BA90D1D128000004E716C /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
-		D26BA90F1D12887B004E716C /* user256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = user256.png; path = ../../../../Downloads/user256.png; sourceTree = "<group>"; };
+		D26BA90F1D12887B004E716C /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = user.png; path = ../../../../Downloads/user.png; sourceTree = "<group>"; };
 		D26BA9101D12887B004E716C /* user64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = user64.png; path = ../../../../Downloads/user64.png; sourceTree = "<group>"; };
 		D26BA9161D129709004E716C /* TextFieldValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldValidator.h; sourceTree = "<group>"; };
 		D26BA9171D129709004E716C /* TextFieldValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldValidator.m; sourceTree = "<group>"; };
@@ -205,7 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				D26BA91A1D129827004E716C /* error.png */,
-				D26BA90F1D12887B004E716C /* user256.png */,
+				D26BA90F1D12887B004E716C /* user.png */,
 				D26BA9101D12887B004E716C /* user64.png */,
 			);
 			name = asset;
@@ -366,7 +366,7 @@
 				D26BA8DA1D126232004E716C /* LaunchScreen.storyboard in Resources */,
 				D26BA8D71D126232004E716C /* Assets.xcassets in Resources */,
 				D26BA91B1D129827004E716C /* error.png in Resources */,
-				D26BA9111D12887B004E716C /* user256.png in Resources */,
+				D26BA9111D12887B004E716C /* user.png in Resources */,
 				D26BA8D21D126232004E716C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -591,10 +591,13 @@
 			baseConfigurationReference = EA4D81AB7611F3857A499548 /* Pods-ContactApplication.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ContactApplication/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ui.ContactApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ContactApplication/ContactApplication-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -603,10 +606,12 @@
 			baseConfigurationReference = 078869584BA4DECD4CE88EF7 /* Pods-ContactApplication.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ContactApplication/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ui.ContactApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ContactApplication/ContactApplication-Bridging-Header.h";
 			};
 			name = Release;
 		};

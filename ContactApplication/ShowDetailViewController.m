@@ -24,7 +24,9 @@
     self.DetailEmail.text = _Details[1];
     self.DetailPhoneNumber.text = _Details[2];
     self.DetailAddress.text = _Details[3];
-    
+
+    UIImage *photo = [UIImage imageWithData:_Details[4]];
+    [self.DetailImage setImage:photo];
     
 }
 
