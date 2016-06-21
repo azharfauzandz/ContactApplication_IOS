@@ -7,14 +7,9 @@
 //
 
 #import "TableViewController.h"
-
 #import <CoreData/CoreData.h>
-
 #import "TableViewCell.h"
-
 #import "ShowDetailViewController.h"
-
-
 
 @interface TableViewController ()
 
@@ -35,6 +30,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog([NSString stringWithFormat:@"apakah sorting? %d",self.isAscending]);
+    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -49,7 +46,14 @@
     
     self.contacts = [[managedObjectContext executeFetchRequest:fetchRequest error:nil]mutableCopy];
     
-    [self.tableView reloadData];
+    if(!self.isAscending){
+        [self sortAscending];
+        self.isAscending = YES;
+    }else{
+        [self sortDescending];
+        self.isAscending = NO;
+    }
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,7 +70,6 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.contacts.count;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -142,21 +145,11 @@
         NSString *address = [NSString stringWithFormat:@"%@",[contact valueForKey:@"address"]];
         NSData *imgData;
         if(![contact valueForKey:@"photo"]){
-           // NSLog();
             imgData = UIImagePNGRepresentation([UIImage imageNamed:@"user.png"]);
         }else{
             imgData = [contact valueForKey:@"photo"];
-        }
-        ;
-        detailView.Details = @[name,email,phone, address, imgData];
-        
-        //debugging
-        
-        NSLog(name);
-        NSLog(email);
-        NSLog(phone);
-        NSLog(address);
-        
+        };
+        detailView.Details = @[name,email,phone, address, imgData, myIndexPath, self.contacts];
         
     }
 }
@@ -164,6 +157,36 @@
 
 - (IBAction)SortButton:(id)sender {
     
+    if(!self.isAscending){
+        [self sortAscending];
+        self.isAscending = YES;
+    }else{
+        [self sortDescending];
+        self.isAscending = NO;
+    }
+}
+
+- (void) sortAscending{
+    [self.SortButtonImage setImage:[UIImage imageNamed:@"sort_descending"]];
+    NSSortDescriptor *sortDescriptor;
+    sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    NSArray *sortedArray = [self.contacts sortedArrayUsingDescriptors:sortDescriptors];
+    self.contacts = [NSMutableArray arrayWithArray:sortedArray];
+    [self.tableView reloadData];
+    
     
 }
+
+- (void) sortDescending{
+    [self.SortButtonImage setImage:[UIImage imageNamed:@"sort_ascending"]];
+    NSSortDescriptor *sortDescriptor;
+    sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:NO];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    NSArray *sortedArray = [self.contacts sortedArrayUsingDescriptors:sortDescriptors];
+    self.contacts = [NSMutableArray arrayWithArray:sortedArray];
+    [self.tableView reloadData];
+    
+}
+
 @end

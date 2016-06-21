@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet TextFieldValidator *Email;
 @property (weak, nonatomic) IBOutlet TextFieldValidator *PhoneNumber;
 @property (weak, nonatomic) IBOutlet UITextView *Address;
+@property (strong, nonatomic) NSArray *EditContact;
 - (IBAction)PickerImage:(id)sender;
 - (IBAction)CameraImage:(id)sender;
 

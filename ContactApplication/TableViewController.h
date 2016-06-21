@@ -11,6 +11,8 @@
 @interface TableViewController : UITableViewController
 
 - (IBAction)SortButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *SortButtonImage;
 
+@property BOOL isAscending;
 
 @end

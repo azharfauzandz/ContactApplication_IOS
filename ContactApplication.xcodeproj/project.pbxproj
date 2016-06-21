@@ -25,6 +25,10 @@
 		D26BA9181D129709004E716C /* TextFieldValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = D26BA9171D129709004E716C /* TextFieldValidator.m */; };
 		D26BA91B1D129827004E716C /* error.png in Resources */ = {isa = PBXBuildFile; fileRef = D26BA91A1D129827004E716C /* error.png */; };
 		D2ADB8EC1D14016600E89664 /* ShowDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2ADB8EB1D14016600E89664 /* ShowDetailViewController.m */; };
+		D2CD34A41D190CC200C6F1FA /* ascending.png in Resources */ = {isa = PBXBuildFile; fileRef = D2CD34A31D190CC200C6F1FA /* ascending.png */; };
+		D2CD34A61D190CCE00C6F1FA /* descending.png in Resources */ = {isa = PBXBuildFile; fileRef = D2CD34A51D190CCE00C6F1FA /* descending.png */; };
+		D2CD34A81D190DFB00C6F1FA /* alphabetical_sorting.png in Resources */ = {isa = PBXBuildFile; fileRef = D2CD34A71D190DFB00C6F1FA /* alphabetical_sorting.png */; };
+		D2CD34AA1D190E1900C6F1FA /* alphabetical_sorting.png in Resources */ = {isa = PBXBuildFile; fileRef = D2CD34A91D190E1900C6F1FA /* alphabetical_sorting.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +80,10 @@
 		D26BA91A1D129827004E716C /* error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = error.png; path = ../../../../Downloads/error.png; sourceTree = "<group>"; };
 		D2ADB8EA1D14016600E89664 /* ShowDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowDetailViewController.h; sourceTree = "<group>"; };
 		D2ADB8EB1D14016600E89664 /* ShowDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowDetailViewController.m; sourceTree = "<group>"; };
+		D2CD34A31D190CC200C6F1FA /* ascending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ascending.png; path = ../../../../../../var/folders/71/6dn1clgd3014bgj28gj2jkr80000gn/T/iOS7/SVG/Data/ascending.png; sourceTree = "<group>"; };
+		D2CD34A51D190CCE00C6F1FA /* descending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = descending.png; path = ../../../../../../var/folders/71/6dn1clgd3014bgj28gj2jkr80000gn/T/iOS7/SVG/Data/descending.png; sourceTree = "<group>"; };
+		D2CD34A71D190DFB00C6F1FA /* alphabetical_sorting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = alphabetical_sorting.png; path = ../../../../../../var/folders/71/6dn1clgd3014bgj28gj2jkr80000gn/T/iOS7/SVG/Data/alphabetical_sorting.png; sourceTree = "<group>"; };
+		D2CD34A91D190E1900C6F1FA /* alphabetical_sorting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = alphabetical_sorting.png; path = ../../../../../../var/folders/71/6dn1clgd3014bgj28gj2jkr80000gn/T/iOS7/SVG/Data/alphabetical_sorting.png; sourceTree = "<group>"; };
 		EA4D81AB7611F3857A499548 /* Pods-ContactApplication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContactApplication.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ContactApplication/Pods-ContactApplication.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -204,6 +212,10 @@
 		D26BA9131D128887004E716C /* asset */ = {
 			isa = PBXGroup;
 			children = (
+				D2CD34A91D190E1900C6F1FA /* alphabetical_sorting.png */,
+				D2CD34A71D190DFB00C6F1FA /* alphabetical_sorting.png */,
+				D2CD34A51D190CCE00C6F1FA /* descending.png */,
+				D2CD34A31D190CC200C6F1FA /* ascending.png */,
 				D26BA91A1D129827004E716C /* error.png */,
 				D26BA90F1D12887B004E716C /* user.png */,
 				D26BA9101D12887B004E716C /* user64.png */,
@@ -364,10 +376,14 @@
 			files = (
 				D26BA9121D12887B004E716C /* user64.png in Resources */,
 				D26BA8DA1D126232004E716C /* LaunchScreen.storyboard in Resources */,
+				D2CD34AA1D190E1900C6F1FA /* alphabetical_sorting.png in Resources */,
 				D26BA8D71D126232004E716C /* Assets.xcassets in Resources */,
 				D26BA91B1D129827004E716C /* error.png in Resources */,
 				D26BA9111D12887B004E716C /* user.png in Resources */,
+				D2CD34A61D190CCE00C6F1FA /* descending.png in Resources */,
 				D26BA8D21D126232004E716C /* Main.storyboard in Resources */,
+				D2CD34A81D190DFB00C6F1FA /* alphabetical_sorting.png in Resources */,
+				D2CD34A41D190CC200C6F1FA /* ascending.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
