@@ -54,6 +54,7 @@
         
         //set no profile image
         [self.PhotoProfile setImage:[UIImage imageNamed:@"user.png"]];
+        [self.ChangeImageBut setTitle:@"Edit photo" forState:UIControlStateNormal];
         
     }else{
         self.Fullname.text = _EditContact[0];
@@ -90,18 +91,18 @@
 }
 */
 
-- (IBAction)PickerImage:(id)sender {
+
+- (void) pickImage{
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     imagePicker.delegate = self;
     imagePicker.allowsEditing = NO;
     [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
     
     [self presentViewController:imagePicker animated:YES completion:nil];
-    
 }
 
-- (IBAction)CameraImage:(id)sender {
-    NSLog(@"kepencet");
+
+-(void) cameraPick{
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     imagePicker.delegate = self;
     if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
@@ -110,7 +111,7 @@
         [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
         
         [self presentViewController:imagePicker animated:YES completion:nil];
-   
+        
     }else{
         NSLog(@"ga ada kamera");
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:@"No available camera" preferredStyle:UIAlertControllerStyleAlert];
@@ -118,9 +119,25 @@
         
         [alert addAction:oke];
         [self presentViewController:alert animated:YES completion:nil];
-
+        
     }
 }
+
+- (IBAction)ChangeImage:(id)sender {
+    NSLog(@"tes image");
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Photo" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *pickGallery = [UIAlertAction actionWithTitle:@"Choose from gallery" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+        [self pickImage];
+    }];
+    UIAlertAction *cameraPick = [UIAlertAction actionWithTitle:@"Take from Camera" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+        [self cameraPick];
+    }];
+    
+    [alert addAction:pickGallery];
+    [alert addAction:cameraPick];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 
 
 

@@ -22,6 +22,7 @@ PODS:
   - Bolts/Tasks (1.7.0)
   - FBSDKCoreKit (4.13.1):
     - Bolts (~> 1.7)
+  - IQKeyboardManager (4.0.3)
   - MagicalRecord (2.3.2):
     - MagicalRecord/Core (= 2.3.2)
   - MagicalRecord/Core (2.3.2)
@@ -30,6 +31,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
   - FBSDKCoreKit (~> 4.9)
+  - IQKeyboardManager
   - MagicalRecord
   - RSKImageCropper
 
@@ -37,9 +39,10 @@ SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
   FBSDKCoreKit: 2807fe0da2ddb49a1469da6d6ff597f99912980f
+  IQKeyboardManager: be9695ffc5a52077deb4847608f338771022d6d1
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
   RSKImageCropper: edd65fedb3734332818deb139906d6b7f54b8a44
 
-PODFILE CHECKSUM: f18b7d9d86b9ba63cfba1f9fa42e54f939016ad1
+PODFILE CHECKSUM: 340bc2b28067c2979560cf0dcaf68a44e86ac389
 
 COCOAPODS: 1.0.1

@@ -30,8 +30,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog([NSString stringWithFormat:@"apakah sorting? %d",self.isAscending]);
-    
+    NSLog(@"apakah sorting? %d",self.isAscending);
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -45,15 +44,8 @@
     NSFetchRequest *fetchRequest  = [[NSFetchRequest alloc] initWithEntityName:@"Contact"];
     
     self.contacts = [[managedObjectContext executeFetchRequest:fetchRequest error:nil]mutableCopy];
-    
-    if(!self.isAscending){
-        [self sortAscending];
-        self.isAscending = YES;
-    }else{
-        [self sortDescending];
-        self.isAscending = NO;
-    }
-
+    NSLog(@"Sorted? %d",self.isAscending);
+    [self sortAscending];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -94,25 +86,39 @@
 } 
 
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
+
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
+        [managedObjectContext deleteObject:[self.contacts objectAtIndex:indexPath.row]];
+        //if error
+        NSError *error = nil;
+        if (![managedObjectContext save:&error]) {
+            NSLog(@"Can't Delete! %@ %@", error, [error localizedDescription]);
+            return;
+        }
+        
+        //remove from tableview
+        [self.contacts removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        //reload tableview
+        [tableView reloadData];
+        
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.
@@ -156,7 +162,7 @@
 
 
 - (IBAction)SortButton:(id)sender {
-    
+    NSLog(@"status sekarang = %d", self.isAscending);
     if(!self.isAscending){
         [self sortAscending];
         self.isAscending = YES;

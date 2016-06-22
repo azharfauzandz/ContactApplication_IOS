@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>IQKeyboardManager.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MagicalRecord.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,11 +42,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3DAA5E8E8CAB3FE7E86F5F29E93D4118</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>7E61C9A8C176278C6C99C2C59E9C152E</key>
 		<dict>
 			<key>primary</key>
@@ -52,17 +52,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B53E401A8D27BFCC1236FF184C4D6DCC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>C43DEF8E5BFEC36D943258BA3F21834D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>C743C42395D3C33F9883CB4690B475A0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>D54AB3ECEB9A8FBA15D4F73CBE326692</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F23C453237984E45444BEB3A82475A4D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F4687D7810015D8CBAA273F51AEBBFCF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -7,5 +7,7 @@ target ‘ContactApplication’ do
   pod 'FBSDKCoreKit', '~> 4.9'
   pod "MagicalRecord"
   pod 'RSKImageCropper'
+  pod 'IQKeyboardManager'
+
 
 end

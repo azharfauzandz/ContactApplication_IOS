@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "TextFieldValidator.h"
+#import <RSKImageCropper/RSKImageCropper.h>
 
-@interface AddContactViewController : UIViewController
+@interface AddContactViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, RSKImageCropViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *PhotoProfile;
 @property (weak, nonatomic) IBOutlet TextFieldValidator *Fullname;
@@ -17,8 +18,9 @@
 @property (weak, nonatomic) IBOutlet TextFieldValidator *PhoneNumber;
 @property (weak, nonatomic) IBOutlet UITextView *Address;
 @property (strong, nonatomic) NSArray *EditContact;
-- (IBAction)PickerImage:(id)sender;
-- (IBAction)CameraImage:(id)sender;
+- (IBAction)ChangeImage:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *ChangeImageBut;
+
 
 
 @property (strong) NSManagedObjectContext *contact;
